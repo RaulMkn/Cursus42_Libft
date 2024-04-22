@@ -1,2 +1,2 @@
 # Cursus42_Libft
-Primer proyecto del curus de 42 Madrid Fundacion telefonica.
+Primer proyecto del cursus de 42 Madrid Fundacion telefonica.
