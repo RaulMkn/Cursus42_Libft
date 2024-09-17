@@ -6,7 +6,7 @@
 /*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:17:55 by rmakende          #+#    #+#             */
-/*   Updated: 2024/04/02 20:55:08 by rmakende         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:59:01 by rmakende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (ptr[i] == cmp)
-		{
 			return ((unsigned *)(ptr + i));
-		}
 		else
-		{
 			i++;
-		}
 	}
 	return (NULL);
 }

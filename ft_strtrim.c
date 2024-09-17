@@ -26,7 +26,6 @@ static int	is_in_set(char c, const char *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t		len_s1;
-	size_t		len_set;
 	const char	*first;
 	const char	*last;
 	char		*total;
@@ -34,7 +33,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
-	len_set = ft_strlen(set);
 	first = s1;
 	last = s1 + len_s1 - 1;
 	while (first <= last && is_in_set(*first, set))

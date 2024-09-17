@@ -6,7 +6,7 @@
 /*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:08:25 by rmakende          #+#    #+#             */
-/*   Updated: 2024/04/15 14:33:30 by rmakende         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:59:18 by rmakende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,15 @@ int	ft_atoi(const char *str)
 	}
 	return (sum * mult);
 }
+/*
+int main(void)
+{
+	char *str = "-236543";
+	char *str2 = "-2147483648";
+
+	int n1 = ft_atoi(str);
+	int n2 = ft_atoi(str2);
+
+	printf("Resultado: %i\nResultado2: %i", n1, n2);
+}
+*/

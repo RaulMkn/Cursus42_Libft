@@ -33,13 +33,9 @@ static char	*asign_memory(int n)
 		n /= 10;
 	}
 	if (alt < 0)
-	{
 		str = (char *)malloc((size + 2) * sizeof(char));
-	}
 	else
-	{
 		str = (char *)malloc((size + 1) * sizeof(char));
-	}
 	return (str);
 }
 
@@ -64,9 +60,7 @@ static int	turn_num(int n, char *str)
 		n /= 10;
 	}
 	if (i == 0)
-	{
 		str[i++] = '0';
-	}
 	return (i);
 }
 
@@ -138,12 +132,9 @@ char	*ft_itoa(int n)
 }
 
 /*
-
-// Coloca aquí la definición de la función ft_itoa
-
 int main() {
     int num1 = 12345;
-    int num2 = -67890;
+    int num2 = -2147483648;
     int num3 = 0;
 
     char *str1 = ft_itoa(num1);

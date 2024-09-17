@@ -6,7 +6,7 @@
 /*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:18:00 by rmakende          #+#    #+#             */
-/*   Updated: 2024/04/10 19:28:30 by rmakende         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:59:46 by rmakende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (t1[i] != t2[i])
-		{
 			return (t1[i] - t2[i]);
-		}
 		i++;
 	}
 	return (0);

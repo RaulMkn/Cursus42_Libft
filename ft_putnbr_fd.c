@@ -6,7 +6,7 @@
 /*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:43:11 by rmakende          #+#    #+#             */
-/*   Updated: 2024/04/06 20:06:10 by rmakende         ###   ########.fr       */
+/*   Updated: 2024/06/12 12:36:21 by rmakende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,6 @@ static void	ft_putnbr(int nb, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	i = 0;
 	if (n == 0)
 	{
 		write(fd, "0", 1);
