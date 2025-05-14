@@ -6,7 +6,7 @@
 /*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:08:25 by rmakende          #+#    #+#             */
-/*   Updated: 2024/04/17 20:59:18 by rmakende         ###   ########.fr       */
+/*   Updated: 2024/10/17 18:30:14 by rmakende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,42 +31,46 @@ static int	check_spaces(const char *str)
 	return (i);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, int *flag)
 {
-	int	i;
-	int	sum;
-	int	mult;
-	int	j;
+	int		i;
+	long	sum;
+	int		mult;
 
 	i = check_spaces(str);
 	sum = 0;
 	mult = 1;
-	j = 0;
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			mult *= -1;
+			mult = -1;
 		i++;
-		j++;
 	}
-	if (j >= 2)
-		mult = 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (str[i] == '+' || str[i] == '-')
+		return (0);
+	while (str[i] != '\0')
 	{
+		if (!ft_isdigit(str[i]))
+			return (0);
 		sum = (sum * 10) + (str[i] - '0');
+		if ((sum > 2147483647 && mult == 1) || (sum > 2147483648 && mult == -1))
+			return (*flag = 1, 0);
 		i++;
 	}
 	return (sum * mult);
 }
 /*
-int main(void)
-{
-	char *str = "-236543";
-	char *str2 = "-2147483648";
+#include <stdio.h>
 
-	int n1 = ft_atoi(str);
-	int n2 = ft_atoi(str2);
+int main() {
+    // Pruebas con los valores máximo y mínimo de int
+    const char *min_int_str = "3333-3333"; // INT_MIN
+	int *comparer = 0;
+    int result_min = ft_atoi(min_int_str, comparer);
 
-	printf("Resultado: %i\nResultado2: %i", n1, n2);
+    // Imprimir los resultados
+    printf("String: %s -> ft_atoi result: %d\n", min_int_str, result_min);
+
+    return 0;
 }
 */

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 14:13:15 by rmakende          #+#    #+#             */
-/*   Updated: 2024/12/15 17:00:44 by rmakende         ###   ########.fr       */
+/*   Created: 2024/12/03 20:55:23 by root              #+#    #+#             */
+/*   Updated: 2025/01/06 13:32:19 by rmakende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	free_split(char **array)
 {
 	int	i;
 
-	if (!s)
-		return (0);
 	i = 0;
-	while (s[i] != '\0')
+	if (!array)
+		return ;
+	while (array[i])
+	{
+		free(array[i]);
 		i++;
-	return (i);
+	}
+	free(array);
 }

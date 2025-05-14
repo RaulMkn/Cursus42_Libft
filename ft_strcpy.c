@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 14:13:15 by rmakende          #+#    #+#             */
-/*   Updated: 2024/12/15 17:00:44 by rmakende         ###   ########.fr       */
+/*   Created: 2024/12/03 20:58:09 by root              #+#    #+#             */
+/*   Updated: 2024/12/04 19:18:05 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	int	i;
+	int		i;
+	char	*print;
 
-	if (!s)
-		return (0);
+	print = dest;
 	i = 0;
-	while (s[i] != '\0')
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
 		i++;
-	return (i);
+	}
+	dest[i] = '\0';
+	return (print);
 }

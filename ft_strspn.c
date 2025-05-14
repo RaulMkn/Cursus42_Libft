@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 14:13:15 by rmakende          #+#    #+#             */
-/*   Updated: 2024/12/15 17:00:44 by rmakende         ###   ########.fr       */
+/*   Created: 2024/12/18 22:58:16 by rmakende          #+#    #+#             */
+/*   Updated: 2024/12/20 15:50:55 by rmakende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strspn(const char *s, const char *accept)
 {
-	int	i;
+	size_t		i;
+	size_t		j;
+	int			found;
 
-	if (!s)
-		return (0);
+	j = 0;
 	i = 0;
 	while (s[i] != '\0')
+	{
+		found = 0;
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
+			{
+				found = 1;
+				break ;
+			}
+			j++;
+		}
+		if (!found)
+			break ;
 		i++;
+	}
 	return (i);
 }

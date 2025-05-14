@@ -6,7 +6,7 @@
 /*   By: rmakende <rmakende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:13:18 by rmakende          #+#    #+#             */
-/*   Updated: 2024/04/10 19:53:38 by rmakende         ###   ########.fr       */
+/*   Updated: 2025/05/14 21:20:44 by rmakende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include <unistd.h>
 # include <string.h>
-# include <stdio.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <limits.h>
+# include "get_next_line.h"
+# include "ft_printf.h"
 
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, int *flag);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -53,11 +55,16 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	free_split(char **array);
+char	*ft_strcpy(char *dest, const char *src);
+size_t	ft_strspn(const char *s, const char *accept);
+char	*ft_cleaner(char *str, char *removers);
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	int				index;
 }	t_list;
 
 t_list	*ft_lstnew(void *content);
